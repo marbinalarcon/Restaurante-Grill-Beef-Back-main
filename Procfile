@@ -1,1 +1,1 @@
-web: gunicorn Restaurante-Grill-Beef-Back-main.wsgi --log-file -
+web: gunicorn restaurante.wsgi --log-file -
