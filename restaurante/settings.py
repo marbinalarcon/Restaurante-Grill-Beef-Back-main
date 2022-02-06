@@ -98,12 +98,14 @@ WSGI_APPLICATION = 'restaurante.wsgi.application'
 
 import dj_database_url
 from decouple import config
-
-DATABASES = {
+db_from_env = dj_database_url(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+""" DATABASES = {
     'default' : dj_database_url.config(
         default=config('DATABASE_URL')
     )
-}
+} """
+
 
 
 # Password validation
